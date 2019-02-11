@@ -1,0 +1,113 @@
+<?php
+session_start();
+$con= mysqli_connect("localhost", "root", "", "gallery");?>
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="../asset/css/bootstrap.css"> 
+   <link rel="stylesheet" type="text/css" href="../asset/css/style.css">
+   <link rel="stylesheet" type="text/css" href="../asset/css/all.css">
+   <script type="text/javascript" src="../asset/js/script.js"></script>
+</head>
+<body>
+     <div class="container-fluid bgimage">
+     	<div class="row">
+     		<div class="col-3"></div>
+     		<div class="col-6">
+		<div class="card bg-light mt-1 shadow-lg">
+	    <h3 class="card-header bg-info text-center text-light pt-3">
+	        <strong>Sign up for free</strong>
+	    </h3>
+	    <div class="card-body">	    	
+                <form class="text-center" action="../action/act_register.php" method="post"  enctype="multipart/form-data">
+	            <div class="form-group">
+		         <div class="form-row">
+                             <div class="col">
+
+                                     <input type="text" id="FirstName" name="firstname" class="form-control" placeholder="Enter First name" >
+				<label>First Name</label>  
+                          <span style="color: red;">   <?php
+                        if (isset($_SESSION['fmsg'])) {
+                        echo $_SESSION['fmsg'];
+                        unset($_SESSION['fmsg']);                   
+                        }
+                        ?> </span>
+			    </div>
+			    <div class="col">
+					            <!-- Last name -->
+                                <input type="text" id="LastName" name="lastname" class="form-control" placeholder="Enter Last name">
+				<label>Last Name</label>
+                                <span style="color: red;">   <?php
+                        if (isset($_SESSION['lmsg'])) {
+                        echo $_SESSION['lmsg'];
+                        unset($_SESSION['lmsg']);                   
+                        }
+                        ?> </span>
+                            </div>					       
+			</div>
+		       <small class="text-muted">(We request you to provide legal first and last names)</small>					     
+	            </div>
+	            <!-- E-mail -->
+	            <div class="form-group mt-2">
+                        <input type="email" id="email" class="form-control" name="email" placeholder="Enter email address">
+	                <label>E-mail</label>
+                        <span style="color: red;">   <?php
+                        if (isset($_SESSION['emmsg'])) {
+                        echo $_SESSION['emmsg'];
+                        unset($_SESSION['emmsg']);                   
+                        }
+                        ?> </span>
+	            </div>
+
+	            <!-- Password -->
+	            <div class="form-group">
+                        <input type="password" id="password" name="password" class="form-control" placeholder="Enter password">
+	                <label>Password <small class="text-muted m-2"> (At least 8 characters) </small></label>
+                        <span style="color: red;">   <?php
+                        if (isset($_SESSION['pamsg'])) {
+                        echo $_SESSION['pamsg'];
+                        unset($_SESSION['pamsg']);                   
+                        }
+                        ?> </span>
+	            </div>
+                    
+	            <div class="form-group">
+                        <input type="text" id="address" class="form-control" name="address" placeholder="Enter address">
+                        <label>Address</label>
+                        <span style="color: red;">   <?php
+                        if (isset($_SESSION['amsg'])) {
+                        echo $_SESSION['amsg'];
+                        unset($_SESSION['amsg']);                   
+                        }
+                        ?> </span>
+	            </div>
+                    <div class="form-group">
+                            <textarea type="text" rows="3" class="form-control" name="about"></textarea>
+                            <label>About You</label>
+                        </div>
+                    <div class="form-group">
+                           <label><h5>Profile Picture: </h5></label>
+                           <input type="file" name="pic">
+                 
+                     </div>
+	            <!-- Sign up button -->
+	            <button class="btn btn-outline-primary btn-rounded" name="btn_register" value="upload">Submit</button>
+	            <div class="form-group">	                	     
+	                    Already have an account?	                
+	                <a href="login.php">Sign In</a>
+	            </div>
+                    
+	        </form>
+	    </div>
+	         </div>
+	        </div>
+
+     	</div>
+     </div>
+
+     <script type="text/javascript" src="../asset/js/jquery-3.3.1.slim.min.js"></script>
+   <script type="text/javascript" src="../asset/js/popper.min.js"></script>
+   <script type="text/javascript" src="../asset/js/bootstrap.min.js"></script>
+</body>
+</html>

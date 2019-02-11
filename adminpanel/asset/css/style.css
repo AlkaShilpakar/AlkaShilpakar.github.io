@@ -1,0 +1,41 @@
+.headercolor{
+	background-color: lightskyblue !important;
+
+}
+
+.navcolor{
+	color: black;
+	font-size: 20px;
+}
+.estyle{
+	background-color: lightblue;
+	color: lightblue;
+	font-family: forte;
+        
+}
+.pstyle{
+    color: grey;
+	font-family: forte;
+}
+.bodystyle{
+	color: grey;
+	font-family: forte;
+	font-size: 30px;
+}
+.cardstyle{
+	
+	font-size: 18px;
+}
+.bgimage{
+
+    background-image:linear-gradient(lightyellow,lightblue,grey);
+    background-size:cover;
+    height: 800px;
+    background-repeat: no-repeat;
+}
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%;
+}
